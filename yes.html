@@ -12,11 +12,23 @@
       color: #c2185b;
       overflow: hidden;
     }
-    h1 {
-      font-size: 42px;
+    h1 { font-size: 42px; }
+    p { font-size: 22px; }
+    .btn {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 25px;
     }
+    .btn:hover { background: #e63b5d; }
+
     .hearts {
-      font-size: 40px;
+      position: absolute;
+      font-size: 30px;
       animation: float 5s infinite linear;
     }
     @keyframes float {
@@ -28,19 +40,27 @@
 <body>
 
 <script>
+  // Floating hearts
   for (let i = 0; i < 25; i++) {
     let heart = document.createElement("div");
     heart.className = "hearts";
     heart.innerHTML = "🥰💖";
-    heart.style.position = "absolute";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     document.body.appendChild(heart);
   }
+
+  // Kiss sound
+  const kiss = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_7c7a0c2a9c.mp3");
+  window.onload = () => kiss.play();
 </script>
 
 <h1>Yayyyy, you said YES! 🥰💖</h1>
-<p style="font-size:22px;">I love you so much, Simone 💕</p>
+<p>I love you so much, Simone 💕</p>
+
+<a href="index.html">
+  <button class="btn">Back to our invite 💌</button>
+</a>
 
 </body>
 </html>
