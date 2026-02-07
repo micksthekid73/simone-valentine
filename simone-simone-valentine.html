@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simone’s Valentine 💖</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffd1dc, #fff0f5);
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 40px;
+      color: #7a1f3d;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      border-radius: 25px;
+      padding: 35px;
+      max-width: 680px;
+      margin: auto;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+    h1 { color: #c2185b; }
+    .heart { font-size: 45px; }
+
+    .floating-heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin: 15px 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .btn:hover {
+      background: #e63b5d;
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    #countdown {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Falling hearts
+  for (let i = 0; i < 30; i++) {
+    let heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+  }
+
+  // Countdown
+  function updateCountdown() {
+    const target = new Date("February 14, 2026 18:00:00").getTime();
+    const now = new Date().getTime();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = "It’s Date Time 💘";
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("countdown").innerHTML =
+      `⏳ ${d} days ${h}h ${m}m ${s}s until our date`;
+  }
+
+  setInterval(updateCountdown, 1000);
+
+  function sheSaidYes() {
+    alert("She said YES 💘 Mikhiel, you’re winning at life 😌");
+  }
+</script>
+
+<div class="card">
+  <div class="heart">💌</div>
+  <h1>You’re Officially Invited, Simone…</h1>
+
+  <p>My Love,</p>
+
+  <p>This is your formal invitation to a very special evening made just for <b>you</b>.</p>
+
+  <!-- 👉 Replace this image with a photo of you two -->
+  <img src="https://images.unsplash.com/photo-1520975922203-b5d29c42e9b4?auto=format&fit=crop&w=600&q=80" alt="Us ❤️">
+
+  <p><b>📅 Date:</b> 14 February<br>
+  <b>⏰ Time:</b> 6:00 PM<br>
+  <b>📍 Location:</b> A surprise…<br>
+  <b>👗 Dress Code:</b> Semi-formal</p>
+
+  <div id="countdown"></div>
+
+  <p><b>💝 The Plan</b><br>
+  • A pre-Valentine’s gift just for you<br>
+  • One shared starter<br>
+  • Our own mains & desserts (but we’ll steal bites 😋)<br>
+  • Two rounds of drinks — one while we eat, one while we sip & talk<br>
+  • Home before 10 PM for popcorn kisses, cuddles, hand-holding & long hugs 🤍</p>
+
+  <p>So Simone… will you be my Valentine? 💘</p>
+
+  <button class="btn" onclick="sheSaidYes()">Yes, I’m Yours 💖</button>
+
+  <p>With all my love,<br><b>Mikhiel</b></p>
+
+  <!-- Tamia - So Into You -->
+  <iframe width="300" height="170"
+    src="https://www.youtube.com/embed/0lWq4Zf-5Ws?autoplay=1&mute=1"
+    title="So Into You - Tamia"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <p style="font-size:12px;color:#999;">(Tap play if music doesn’t auto-start 💕)</p>
+</div>
+
+</body>
+</html>
