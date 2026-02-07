@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>She Said Yes 💖</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe0ec, #fff5fa);
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 60px;
+      color: #c2185b;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 42px;
+    }
+    .hearts {
+      font-size: 40px;
+      animation: float 5s infinite linear;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      100% { transform: translateY(-10vh); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  for (let i = 0; i < 25; i++) {
+    let heart = document.createElement("div");
+    heart.className = "hearts";
+    heart.innerHTML = "🥰💖";
+    heart.style.position = "absolute";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+  }
+</script>
+
+<h1>Yayyyy, you said YES! 🥰💖</h1>
+<p style="font-size:22px;">I love you so much, Simone 💕</p>
+
+</body>
+</html>
